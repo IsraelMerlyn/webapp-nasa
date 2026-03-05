@@ -209,7 +209,7 @@ const promptInstall = async () => {
 .btn-instalar {
   width: 100%;
   padding: 0.85rem;
-  background-color: rgb(0, 0, 0);
+  background-color: white;
   color: var(--nasa-blue);
   border: none;
   border-radius: 12px;
@@ -267,7 +267,7 @@ const promptInstall = async () => {
     justify-content: space-between;
     align-items: center;
     background: var(--nasa-blue);
-    color: white;
+    color: rgb(0, 0, 0);
     padding: 0.8rem 1rem;
     border-radius: 12px;
     margin-bottom: 1.5rem;
