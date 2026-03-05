@@ -39,4 +39,12 @@ Para este desarrollo, se optó por un enfoque moderno y modular utilizando **Vue
 [Enlace a Vercel / Netlify aquí]
 
 ## 📸 Capturas de Pantalla
-*(Añadir aquí las imágenes del dashboard en Desktop y Mobile)*
+
+**Panel General (Dashboard):**
+![Panel General](https://raw.githubusercontent.com/IsraelMerlyn/webapp-nasa/main/public/capturas/Panel.png)
+
+**Tabla de Amenazas:**
+![Tabla de Amenazas](https://raw.githubusercontent.com/IsraelMerlyn/webapp-nasa/main/public/capturas/Tabla.png)
+
+**Manejo Cauteloso de Peticiones a API:**
+![Consumo Postman](https://raw.githubusercontent.com/IsraelMerlyn/webapp-nasa/main/public/capturas/consumoPostman.png)
