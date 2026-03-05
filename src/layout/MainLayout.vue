@@ -3,7 +3,7 @@
     <aside class="desktop-sidebar">
       <div class="sidebar-header">
         <div class="logo-box">🚀</div>
-        <h2>NASA NeoWs</h2>
+        <h2>NASA - JOSUEVASQUEZ</h2>
       </div>
       
       <nav class="sidebar-nav">
