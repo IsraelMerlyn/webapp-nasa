@@ -1,7 +1,39 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
-
-// https://vite.dev/config/
+import { VitePWA } from 'vite-plugin-pwa'
+import { fileURLToPath, URL } from 'node:url'
 export default defineConfig({
-  plugins: [vue()],
+  plugins: [
+    vue(),
+    VitePWA({
+      registerType: 'autoUpdate',
+      manifest: {
+        name: 'NASA Asteroids Dashboard',
+        short_name: 'NeoWs Dash',
+        description: 'Monitoreo de asteroides cercanos a la Tierra',
+        theme_color: '#0b3d91', 
+        icons: [
+          {
+            src: '/pwa192x192.png', 
+            sizes: '192x192',
+            type: 'image/png'
+          },
+          {
+            src: '/pwa512x512.png',
+            sizes: '512x512',
+            type: 'image/png'
+          }
+        ]
+      }
+    })
+  ],
+  resolve: {
+    alias: {
+      '@': fileURLToPath(new URL('./src', import.meta.url))
+    }
+  },
+  test: {
+    environment: 'jsdom',
+    globals: true
+  }
 })
