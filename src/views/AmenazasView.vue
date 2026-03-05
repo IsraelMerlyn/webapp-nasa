@@ -2,7 +2,7 @@
   <MainLayout>
     <div class="amenazas-wrapper">
       <header class="header-section">
-        <h1>Registro de Amenazas Espaciales ☄️</h1>
+        <h1>Registro de Amenazas Espaciales </h1>
         <p>Listado de asteroides potencialmente peligrosos para la Tierra</p>
       </header>
       <div class="buscador-container" role="search">
@@ -71,8 +71,7 @@
 </template>
 
 <script setup>
-
-import { onMounted, computed,ref } from 'vue';
+import { onMounted, computed, ref } from 'vue';
 import MainLayout from '../layout/MainLayout.vue';
 import { useNasaData } from '../API/useNasaData';
 
@@ -80,10 +79,7 @@ const { asteroidesData, isLoading, error, fetchAsteroides } = useNasaData();
 
 const terminoBusqueda = ref('');
 
-
-
 onMounted(() => {
-  // DECLARAMOS VARIABLES DE FECHA
   const hoy = new Date();
   const hace7Dias = new Date();
   hace7Dias.setDate(hoy.getDate() - 7);
@@ -91,12 +87,9 @@ onMounted(() => {
   const fechaFin = hoy.toISOString().split('T')[0];
   const fechaInicio = hace7Dias.toISOString().split('T')[0];
   
-  // CONSUMO DE LA API "NASA Asteroids NeoWs"
-  // fetch que trae todo la data de la api
   fetchAsteroides(fechaInicio, fechaFin);
 });
 
-// funcion que visualiza el total de la data filtrando solo los peligrosos
 const asteroidesPeligrosos = computed(() => {
   return asteroidesData.value.filter(ast => {
     const esPeligro = ast.esPeligroso === true;
@@ -111,7 +104,7 @@ const formatearNumero = (numero) => {
 </script>
 
 <style scoped>
-/* Tus estilos anteriores se mantienen intactos aquí... */
+
 .amenazas-wrapper { display: flex; flex-direction: column; gap: 2rem; max-width: 1200px; margin: 0 auto; }
 .header-section { background: white; padding: 2rem; border-radius: 16px; box-shadow: 0 10px 30px rgba(0,0,0,0.03), 0 1px 3px rgba(0,0,0,0.02); border: 1px solid rgba(0,0,0,0.03); }
 .header-section h1 { margin-top: 0; color: #0b3d91; }
@@ -124,9 +117,6 @@ th { background-color: rgba(11, 61, 145, 0.03); color: #0b3d91; font-weight: 700
 .badge-peligro { background-color: #ffebee; color: #c62828; padding: 0.4rem 0.75rem; border-radius: 6px; font-size: 0.85rem; font-weight: 700; border: 1px solid rgba(198, 40, 40, 0.2); }
 .estado-vacio { text-align: center; color: #2e7d32; font-weight: 600; padding: 3rem; background: rgba(46, 125, 50, 0.05); }
 
-/* 
-   // funcion de squeleton
-*/
 .skeleton-text {
   height: 20px;
   width: 80%;

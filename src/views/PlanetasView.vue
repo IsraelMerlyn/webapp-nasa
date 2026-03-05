@@ -1,7 +1,7 @@
 <template>
   <MainLayout>
     <div class="header-section">
-      <h1>Exploración Cósmica 🌌</h1>
+      <h1>Exploración Cósmica </h1>
       <p>Registros visuales del universo (NASA APOD)</p>
     </div>
 

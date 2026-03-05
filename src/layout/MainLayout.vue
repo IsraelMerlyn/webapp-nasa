@@ -8,17 +8,17 @@
       
       <nav class="sidebar-nav">
         <router-link to="/" active-class="activo" exact>
-          <span class="icon">📊</span>
-          <span class="text">Panel General</span>
+          <span class="icon"></span>
+          <span class="text">Panel</span>
         </router-link>
         
         <router-link to="/amenazas" active-class="activo">
-          <span class="icon">☄️</span>
+          <span class="icon"></span>
           <span class="text">Amenazas</span>
         </router-link>
 
        <router-link to="/planetas" active-class="activo" exact>
-          <span class="icon">🌌</span>
+          <span class="icon"></span>
           <span class="text">Explorar Planetas</span>
         </router-link>
       </nav>

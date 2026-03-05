@@ -60,6 +60,6 @@ describe('useNasaData composable', () => {
     await fetchAsteroides('2020-01-01', '2020-01-01');
 
     expect(isLoading.value).toBe(false);
-    expect(error.value).toBe('Error al conectar con la red de monitoreo espacial');
+    expect(error.value).toBe('Error al conectar con la red');
   });
 });

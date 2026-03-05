@@ -2,7 +2,7 @@
   <MainLayout>
     <div class="dashboard-wrapper">
       <header class="header-section">
-        <h1>Centro de Monitoreo NeoWs 🚀</h1>
+        <h1>Centro de Monitoreo JOSUE VASQUEZ</h1>
         <p>Observación de objetos cercanos a la Tierra</p>
         
         <div class="filtros" role="search">
@@ -47,14 +47,11 @@ import BarChart from '../components/BarChart.vue';
 import DoughnutChart from '../components/DoughnutChart.vue';
 import { useNasaData } from "../API/useNasaData.js";
 
-// Declaracion de variables
 const { asteroidesData, conteoPorDia, isLoading, error, fetchAsteroides } = useNasaData();
 
-// Estado local para los filtros de fecha
 const fechaInicio = ref('2026-03-01');
 const fechaFin = ref('2026-03-05');
 
-// La API de la NASA solo permite rangos de 7 días, así que calculamos un máximo dinámico
 const maxFechaFin = computed(() => {
   if (!fechaInicio.value) return null;
   const fecha = new Date(fechaInicio.value);
@@ -62,14 +59,10 @@ const maxFechaFin = computed(() => {
   return fecha.toISOString().split('T')[0];
 });
 
-// funcion que visualiza el total de la data en pantalla en base a los filtros
 const buscarAsteroides = async () => {
-  // consumo de la api "NASA Asteroids NeoWs"
-  // fetch que trae todo la data de la api usando las fechas seleccionadas
   await fetchAsteroides(fechaInicio.value, fechaFin.value);
 };
 
-// Carga inicial al entrar al dashboard
 onMounted(() => {
   buscarAsteroides();
 });
